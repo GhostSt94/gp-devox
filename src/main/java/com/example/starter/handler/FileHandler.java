@@ -5,12 +5,15 @@ import io.vertx.core.file.FileSystem;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.FileUpload;
 import io.vertx.ext.web.RoutingContext;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Set;
 
 public class FileHandler {
-
+  static final Logger log = LogManager.getLogger(FileHandler.class);
   public static final String PATH_FACTURE_FILES="src/main/resources/FactureFiles/";
   public static final String PATH_PROJECT_FILES="src/main/resources/ProjectFiles/";
 
@@ -25,7 +28,7 @@ public class FileHandler {
       }
     }catch (Exception e){
       ctx.response().setStatusCode(404).end("not found");
-      System.out.println(e.toString());
+      log.error(e.getMessage());
     }
   }
 
@@ -40,7 +43,7 @@ public class FileHandler {
       }else{
         Set<FileUpload> fileUploadSet = ctx.fileUploads();
         if (fileUploadSet == null || fileUploadSet.isEmpty()) {
-          System.out.println("no file found");
+          log.info("no file found");
           ctx.response().setStatusCode(404).end("no file found");
         } else {
           for (FileUpload f : fileUploadSet) {
@@ -59,7 +62,7 @@ public class FileHandler {
                       if(type.equals("project")&&project.containsKey("file")){
                           deleteFile(fs,type,project.getString("file"));
                       }
-                      System.out.println("added "+type+" file "+file_name);
+                      log.info("added {} file {}",type,file_name);
                       ctx.response().setStatusCode(200).end("File Saved");
                     } else {
                       ctx.response().setStatusCode(400).end("Error saving file");
@@ -75,7 +78,7 @@ public class FileHandler {
       }
     }catch (Exception e){
       ctx.response().setStatusCode(400).end("Unexpected Error");
-      System.out.println(e.toString());
+      log.error(e.getMessage());
     }
   }
 
@@ -90,13 +93,17 @@ public class FileHandler {
   }
 
   public static void deleteFile(FileSystem fs, String type,String fileName){
-    fs.delete(setPath(type)+fileName,voidAsyncResult -> {
-      if(voidAsyncResult.succeeded()){
-        System.out.println("removed "+type+" file "+fileName);
-      }else{
-        System.out.println(type+" file "+fileName+" doesn't exist");
-      }
-    });
+    try {
+      fs.delete(setPath(type) + fileName, voidAsyncResult -> {
+        if (voidAsyncResult.succeeded()) {
+          log.info("removed {} file {}",type, fileName);
+        } else {
+          log.info( "{} file {} doesn't exist",type,fileName);
+        }
+      });
+    }catch(Exception e){
+      log.error(e.getMessage());
+    }
   }
 
 }

@@ -13,11 +13,14 @@ import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.mongo.*;
 import io.vertx.ext.mongo.FindOptions;
 import io.vertx.ext.mongo.MongoClient;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.bson.types.ObjectId;
 
 import java.nio.file.FileSystem;
 
 public class DbService extends AbstractVerticle {
+  static final Logger log = LogManager.getLogger(DbService.class);
   final String COLLECTION="projects";
   final String COLLECTION_CLIENTS="clients";
   final String COLLECTION_FACTURES="factures";
@@ -54,7 +57,7 @@ public class DbService extends AbstractVerticle {
         });
       }catch (Exception e){
         msg.fail(404, "Unexpected Error");
-        System.out.println(e.toString());
+        log.error(e.toString());
       }
     });
     eb.consumer("remove.file.db",msg->{
@@ -71,7 +74,7 @@ public class DbService extends AbstractVerticle {
         });
       }catch (Exception e){
         msg.fail(404,"Error DB");
-        System.out.println(e);
+        log.error(e.getMessage());
       }
     });
     //
@@ -106,7 +109,7 @@ public class DbService extends AbstractVerticle {
         }
       }catch (Exception e){
         msg.fail(404,"Not found");
-        System.out.println(e.toString());
+        log.error(e.getMessage());
       }
     });
     eb.consumer("find.one.db",msg->{
@@ -124,7 +127,7 @@ public class DbService extends AbstractVerticle {
         });
       }catch (Exception e){
         msg.fail(404, "Unexpected Error");
-        System.out.println(e.toString());
+        log.error(e.getMessage());
       }
     });
     eb.consumer("update.one.db",msg->{
@@ -138,14 +141,15 @@ public class DbService extends AbstractVerticle {
         JsonObject query = new JsonObject().put("_id", id);
         client.updateCollection(setCollection(type), query, setData, res -> {
           if (res.succeeded()) {
-            System.out.println(type+" "+id+" updated.");
+            log.info("{} {} updated",type,id);
             msg.reply("updated");
           } else {
             msg.fail(400, "Error");
           }
         });
       }catch (Exception e){
-        System.out.println(e.toString());
+        msg.fail(404, "Unexpected Error");
+        log.error(e.getMessage());
       }
     });
     eb.consumer("add.db",msg->{
@@ -155,7 +159,7 @@ public class DbService extends AbstractVerticle {
         data.remove("type");
         client.insert(setCollection(type), data, res -> {
           if (res.succeeded()) {
-            System.out.println("New "+type+" created ("+res.result()+")");
+            log.info("New {} created ({})",type,res.result());
             msg.reply(res.result());
           } else {
             msg.fail(404, "Error");
@@ -163,7 +167,7 @@ public class DbService extends AbstractVerticle {
         });
       }catch (Exception e){
         msg.fail(404, "Unexpected Error");
-        System.out.println(e.toString());
+        log.error(e.getMessage());
       }
     });
     eb.consumer("delete.facture.db",msg->{
@@ -178,7 +182,7 @@ public class DbService extends AbstractVerticle {
               String file = res.result().getString("file");
               FileHandler.deleteFile(vertx.fileSystem(), "facture", file);
             }
-            System.out.println("Facture "+id+" deleted");
+            log.info("Facture {} deleted",id);
             msg.reply("Facture deleted");
           } else {
             msg.fail(404, "Facture not found");
@@ -186,7 +190,7 @@ public class DbService extends AbstractVerticle {
         });
       }catch (Exception e){
         msg.fail(404, "Unexpected Error");
-        System.out.println(e.toString());
+        log.error(e.getMessage());
       }
     });
     eb.consumer("delete.project.db",msg->{
@@ -210,7 +214,7 @@ public class DbService extends AbstractVerticle {
 
               }
             });
-            System.out.println("Project " + id + " Deleted");
+            log.info("Project {} deleted",id);
             msg.reply("Project deleted");
           } else {
             msg.fail(404, "Project not found");
@@ -218,7 +222,7 @@ public class DbService extends AbstractVerticle {
         });
       }catch (Exception e){
         msg.fail(404, "Unexpected Error");
-        System.out.println(e.toString());
+        log.error(e.getMessage());
       }
     });
     eb.consumer("delete.client.db",msg->{
@@ -226,7 +230,7 @@ public class DbService extends AbstractVerticle {
         JsonObject query = new JsonObject().put("_id", msg.body().toString());
         client.removeDocument(COLLECTION_CLIENTS, query, res -> {
           if (res.succeeded()&&res.result().getRemovedCount()>0) {
-            System.out.println("client "+msg.body().toString()+" deleted");
+            log.info("Client {} deleted",msg.body().toString());
             msg.reply("deleted");
           } else {
             msg.fail(404, "Client not Found");
@@ -234,7 +238,7 @@ public class DbService extends AbstractVerticle {
         });
       }catch (Exception e){
         msg.fail(404, "Unexpected Error");
-        System.out.println(e.toString());
+        log.error(e.getMessage());
       }
     });
     //
@@ -249,14 +253,14 @@ public class DbService extends AbstractVerticle {
         MongoUserUtil us = MongoUserUtil.create(client, options, null);
         us.createUser(credentials.getString("username"), credentials.getString("password"), res -> {
           if (res.succeeded()) {
-            System.out.println(res.result());
+            log.info("new user created {}",credentials.getString("username"));
             msg.reply(res.result());
           } else {
             msg.fail(403, "Error registering");
           }
         });
       }catch (Exception e){
-        System.out.println(e.toString());
+        log.error(e.getMessage());
       }
     });
     eb.consumer("login.user",msg-> {
@@ -265,13 +269,14 @@ public class DbService extends AbstractVerticle {
         MongoAuthentication authenticationProvider = MongoAuthentication.create(client, options);
         authenticationProvider.authenticate(credentials)
           .onSuccess(user -> {
+            log.info("User {} connected",user.get("username").toString());
             msg.reply(user.principal());
           })
           .onFailure(err -> {
             msg.fail(403, err.getMessage());
           });
       }catch (Exception e){
-        System.out.println(e.toString());
+        log.error(e.getMessage());
       }
     });
   }

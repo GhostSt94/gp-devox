@@ -3,8 +3,11 @@ package com.example.starter.handler;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class CRUD {
+  static final Logger log = LogManager.getLogger(CRUD.class);
 
   public static void findAll(RoutingContext ctx, JsonObject jsonType) {
     try {
@@ -18,7 +21,7 @@ public class CRUD {
       });
     }catch (Exception e){
       ctx.response().setStatusCode(404).end("Unexpected Error");
-      System.out.printf(e.toString());
+      log.error(e.getMessage());
     }
   }
 
@@ -34,7 +37,7 @@ public class CRUD {
       });
     }catch (Exception e){
       ctx.response().setStatusCode(404).end("Unexpected Error");
-      System.out.printf(e.toString());
+      log.error(e.getMessage());
     }
   }
 
@@ -49,7 +52,7 @@ public class CRUD {
       });
     }catch (Exception e){
       ctx.response().setStatusCode(404).end("Unexpected Error");
-      System.out.printf(e.toString());
+      log.error(e.getMessage());
     }
   }
 
@@ -64,7 +67,7 @@ public class CRUD {
       });
     } catch (Exception e) {
       ctx.response().setStatusCode(404).end("Unexpected Error");
-      System.out.printf(e.toString());
+      log.error(e.getMessage());
     }
   }
 
@@ -90,7 +93,7 @@ public class CRUD {
       });
     } catch (Exception e) {
       ctx.response().setStatusCode(404).end("Unexpected Error");
-      System.out.printf(e.toString());
+      log.error(e.getMessage());
     }
   }
 }

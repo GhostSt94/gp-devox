@@ -1,8 +1,11 @@
 package com.example.starter.handler;
 
 import io.vertx.ext.web.RoutingContext;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class AuthHandler {
+  static final Logger log = LogManager.getLogger(AuthHandler.class);
 
   public static void register(RoutingContext ctx){
     try {
@@ -14,7 +17,7 @@ public class AuthHandler {
         }
       });
     }catch (Exception e){
-      System.out.println(e.toString());
+      log.info(e.getMessage());
     }
   }
 
@@ -28,7 +31,7 @@ public class AuthHandler {
         }
       });
     }catch (Exception e){
-      System.out.println(e.toString());
+      log.info(e.getMessage());
     }
   }
 }

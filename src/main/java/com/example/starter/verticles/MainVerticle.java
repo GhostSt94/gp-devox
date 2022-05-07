@@ -1,5 +1,6 @@
 package com.example.starter.verticles;
 
+import com.example.starter.Main;
 import com.example.starter.handler.*;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Promise;
@@ -16,13 +17,15 @@ import io.vertx.ext.web.handler.BodyHandler;
 import io.vertx.ext.web.handler.CorsHandler;
 import io.vertx.ext.web.handler.sockjs.SockJSBridgeOptions;
 import io.vertx.ext.web.handler.sockjs.SockJSHandler;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Set;
 
 public class MainVerticle extends AbstractVerticle {
-
+  static final Logger log = LogManager.getLogger(MainVerticle.class);
   @Override
   public void start(Promise<Void> startPromise) throws Exception {
 
@@ -42,7 +45,7 @@ public class MainVerticle extends AbstractVerticle {
         be.complete(true);
       }));
     }catch (Exception e){
-      System.out.println(e.getMessage());
+      log.error(e.getMessage());
     }
 
 
@@ -84,8 +87,9 @@ public class MainVerticle extends AbstractVerticle {
     vertx.createHttpServer().requestHandler(router).listen(8888, http -> {
       if (http.succeeded()) {
         startPromise.complete();
-        System.out.println("HTTP server started on port 8888");
+        log.info("HTTP server started on port 8888");
       } else {
+        log.warn(http.cause().getMessage());
         startPromise.fail(http.cause());
       }
     });

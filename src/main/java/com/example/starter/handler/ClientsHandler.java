@@ -2,12 +2,12 @@ package com.example.starter.handler;
 
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
-import io.vertx.core.logging.Log4j2LogDelegate;
-import io.vertx.core.logging.Log4j2LogDelegateFactory;
 import io.vertx.ext.web.RoutingContext;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class ClientsHandler {
-
+  final static String TYPE="client";
   /*public static void clients(RoutingContext ctx){
     try {
       ctx.vertx().eventBus().request("get.client.all.db", "", res -> {
@@ -91,7 +91,6 @@ public class ClientsHandler {
       System.out.println(e.toString());
     }
   }*/
-  final static String TYPE="client";
 
   public static void clients(RoutingContext ctx){
     CRUD.findAll(ctx, getJsonType());
