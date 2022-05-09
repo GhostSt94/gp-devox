@@ -27,7 +27,13 @@ public class FactureHandler {
     CRUD.deleteOne(ctx,getJsonType().put("id",ctx.pathParam("id")));
   }
 
+  public static void updateFacture(RoutingContext ctx) {
+    JsonObject data=ctx.getBodyAsJson();
+    CRUD.updateOne(ctx,data.put("type",TYPE).put("id",ctx.pathParam("id")));
+  }
+
   public static JsonObject getJsonType(){
     return new JsonObject().put("type",TYPE);
   }
+
 }

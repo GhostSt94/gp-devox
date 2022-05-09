@@ -1,5 +1,6 @@
 package com.example.starter.handler;
 
+import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -9,7 +10,7 @@ public class AuthHandler {
 
   public static void register(RoutingContext ctx){
     try {
-      ctx.vertx().eventBus().request("register.user", ctx.getBodyAsJson(), rep -> {
+      ctx.vertx().eventBus().request("auth.user", setMessage("register",ctx.getBodyAsJson()), rep -> {
         if (rep.succeeded()) {
           ctx.response().setStatusCode(200).send(rep.result().body().toString());
         } else {
@@ -23,7 +24,7 @@ public class AuthHandler {
 
   public static void login(RoutingContext ctx){
     try {
-      ctx.vertx().eventBus().request("login.user", ctx.getBodyAsJson(), rep -> {
+      ctx.vertx().eventBus().request("auth.user", setMessage("login",ctx.getBodyAsJson()), rep -> {
         if (rep.succeeded()) {
           ctx.response().setStatusCode(200).send(rep.result().body().toString());
         } else {
@@ -34,4 +35,11 @@ public class AuthHandler {
       log.info(e.getMessage());
     }
   }
+
+  public static JsonObject setMessage(String type,JsonObject credentials){
+    return new JsonObject()
+      .put("type",type)
+      .put("credentials",credentials);
+  }
 }
+

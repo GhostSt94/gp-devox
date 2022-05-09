@@ -1,0 +1,28 @@
+[INFO ] 2022-05-08 00:51:58.429 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-08 00:52:01.919 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-08 01:40:28.388 [vert.x-eventloop-thread-2] DbService - New project created (62771f8cf8c897620feb89b8)
+[INFO ] 2022-05-08 01:40:37.241 [vert.x-eventloop-thread-2] DbService - Project 62771f8cf8c897620feb89b8 deleted
+[INFO ] 2022-05-08 02:37:06.939 [vert.x-eventloop-thread-2] DbService - User devox connected
+[INFO ] 2022-05-08 02:53:38.247 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-08 02:54:11.041 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-08 02:54:46.005 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-08 15:27:52.085 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-08 15:40:17.890 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-08 15:40:53.849 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-08 15:42:46.300 [vert.x-eventloop-thread-2] DbService - New facture created (6277e4f693b5f56f39229bae)
+[INFO ] 2022-05-08 15:42:46.765 [vert.x-eventloop-thread-0] FileHandler - added facture file 202205081542_DTS.pdf
+[INFO ] 2022-05-08 15:43:13.677 [vert.x-eventloop-thread-0] FileHandler - added project file 202205081543_Dark.pdf
+[INFO ] 2022-05-08 15:43:39.372 [vert.x-eventloop-thread-0] FileHandler - removed project file 202205081543_Dark.pdf
+[INFO ] 2022-05-08 15:52:19.214 [vert.x-eventloop-thread-2] DbService - project 6271c0420b5f7a1bd88555e7 updated
+[INFO ] 2022-05-08 15:53:42.463 [vert.x-eventloop-thread-2] DbService - Project 6271c0420b5f7a1bd88555e7 deleted
+[INFO ] 2022-05-08 15:53:42.469 [vert.x-eventloop-thread-2] DbService - Facture 6277e4f693b5f56f39229bae deleted
+[INFO ] 2022-05-08 15:53:42.471 [vert.x-eventloop-thread-2] FileHandler - removed facture file 202205081542_DTS.pdf
+[INFO ] 2022-05-08 15:54:23.114 [vert.x-eventloop-thread-2] DbService - New project created (6277e7af93b5f56f39229baf)
+[INFO ] 2022-05-08 15:54:30.657 [vert.x-eventloop-thread-2] DbService - Project 6277e7af93b5f56f39229baf deleted
+[INFO ] 2022-05-08 23:27:55.827 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-08 23:32:08.371 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-08 23:45:42.863 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-08 23:47:02.951 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-08 23:50:40.088 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-08 23:50:40.970 [vert.x-eventloop-thread-2] DbService - new user created amine
+[INFO ] 2022-05-08 23:51:16.366 [vert.x-eventloop-thread-2] DbService - User amine connected

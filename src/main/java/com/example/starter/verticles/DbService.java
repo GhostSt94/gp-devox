@@ -247,48 +247,40 @@ public class DbService extends AbstractVerticle {
 
     //auth
     MongoAuthenticationOptions options = new MongoAuthenticationOptions();
-    eb.consumer("register.user",msg->{
+    eb.consumer("auth.user",msg->{
       try {
-        JsonObject credentials = (JsonObject) msg.body();
-        MongoUserUtil us = MongoUserUtil.create(client, options, null);
-        us.createUser(credentials.getString("username"), credentials.getString("password"), res -> {
-          if (res.succeeded()) {
-            log.info("new user created {}",credentials.getString("username"));
-            msg.reply(res.result());
-          } else {
-            msg.fail(403, "Error registering");
-          }
-        });
-      }catch (Exception e){
-        log.error(e.getMessage());
-      }
-    });
-    eb.consumer("login.user",msg-> {
-      try {
-        JsonObject credentials = (JsonObject) msg.body();
-        MongoAuthentication authenticationProvider = MongoAuthentication.create(client, options);
-        authenticationProvider.authenticate(credentials)
-          .onSuccess(user -> {
-            log.info("User {} connected",user.get("username").toString());
-            msg.reply(user.principal());
-          })
-          .onFailure(err -> {
-            msg.fail(403, err.getMessage());
+        JsonObject msg_data = (JsonObject) msg.body();
+        JsonObject credentials=msg_data.getJsonObject("credentials");
+        String type=msg_data.getString("type");
+        if (type.equals("login")) {
+          MongoAuthentication authenticationProvider = MongoAuthentication.create(client, options);
+          authenticationProvider.authenticate(credentials)
+            .onSuccess(user -> {
+              log.info("User {} connected",user.get("username").toString());
+              msg.reply(user.principal());
+            })
+            .onFailure(err -> {
+              msg.fail(403, err.getMessage());
+            });
+        }else if(type.equals("register")){
+          MongoUserUtil us = MongoUserUtil.create(client, options, null);
+          us.createUser(credentials.getString("username"), credentials.getString("password"), res -> {
+            if (res.succeeded()) {
+              log.info("new user created {}",credentials.getString("username"));
+              msg.reply(res.result());
+            } else {
+              msg.fail(403, "Username already exists");
+            }
           });
+        }else{
+          msg.fail(404, "Error url");
+        }
       }catch (Exception e){
         log.error(e.getMessage());
       }
     });
   }
 
-  public JsonObject setType(String type,JsonObject obj){
-    if(type.equals("project")){
-      obj.put("type","project");
-    }else if(type.equals("facture")){
-      obj.put("type","facture");
-    }
-    return obj;
-  }
   public String setCollection(String type){
     String coll="";
     if(type.equals("project")){

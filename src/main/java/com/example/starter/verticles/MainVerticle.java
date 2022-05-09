@@ -78,8 +78,9 @@ public class MainVerticle extends AbstractVerticle {
     router.delete("/projects/:id").handler(ProjectHandler::deleteProject);
     router.delete("/projects/:id/file").handler(ProjectHandler::removeFile);
     //Facture
-    router.get("/factures/:id").handler(FactureHandler::factures);
+    router.get("/factures/project/:id").handler(FactureHandler::factures);
     router.get("/factures/one/:id").handler(FactureHandler::getFacture);
+    router.put("/factures/:id").handler(FactureHandler::updateFacture);
     router.post("/factures").handler(FactureHandler::addFacture);
     router.delete("/factures/:id").handler(FactureHandler::deleteFacture);
 
