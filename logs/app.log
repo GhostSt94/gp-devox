@@ -1,25 +1,130 @@
-[INFO ] 2022-05-09 09:43:10.531 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
-[INFO ] 2022-05-09 09:44:08.616 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
-[INFO ] 2022-05-09 09:44:38.210 [vert.x-eventloop-thread-2] DbService - User admin connected
-[INFO ] 2022-05-09 09:47:18.899 [vert.x-eventloop-thread-2] DbService - User admin connected
-[INFO ] 2022-05-09 09:57:39.285 [vert.x-eventloop-thread-2] DbService - project 6261409f8209952291557f9e updated
-[INFO ] 2022-05-09 10:01:46.855 [vert.x-eventloop-thread-2] DbService - Facture 6270898d5e7c3a0a0ba5b62c deleted
-[INFO ] 2022-05-09 10:01:46.864 [vert.x-eventloop-thread-2] FileHandler - removed facture file 202205030146_Dark.pdf
-[INFO ] 2022-05-09 10:01:49.932 [vert.x-eventloop-thread-2] DbService - Facture 62708c475e7c3a0a0ba5b62d deleted
-[INFO ] 2022-05-09 10:01:49.934 [vert.x-eventloop-thread-2] FileHandler - removed facture file 202205030158_Light.pdf
-[INFO ] 2022-05-09 10:01:57.047 [vert.x-eventloop-thread-2] DbService - Facture 62708d0b5e7c3a0a0ba5b62f deleted
-[INFO ] 2022-05-09 10:01:57.049 [vert.x-eventloop-thread-2] FileHandler - removed facture file 202205030201_recu-candidature.pdf
-[INFO ] 2022-05-09 10:02:26.660 [vert.x-eventloop-thread-2] DbService - New facture created (6278e6b2cc637a59a60b4247)
-[INFO ] 2022-05-09 10:02:27.328 [vert.x-eventloop-thread-0] FileHandler - added facture file 202205091002_Dark.pdf
-[INFO ] 2022-05-09 11:45:21.414 [vert.x-eventloop-thread-2] DbService - New project created (6278fed1cc637a59a60b4248)
-[INFO ] 2022-05-09 11:51:29.412 [vert.x-eventloop-thread-2] DbService - User admin connected
-[INFO ] 2022-05-09 11:53:36.991 [vert.x-eventloop-thread-2] DbService - New facture created (627900c0cc637a59a60b4249)
-[INFO ] 2022-05-09 11:53:37.252 [vert.x-eventloop-thread-0] FileHandler - added facture file 202205091153_Dark.pdf
-[INFO ] 2022-05-09 11:54:38.685 [vert.x-eventloop-thread-2] DbService - User admin connected
-[INFO ] 2022-05-09 12:00:30.442 [vert.x-eventloop-thread-2] DbService - User admin connected
-[INFO ] 2022-05-09 12:03:40.498 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
-[INFO ] 2022-05-09 12:20:26.170 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
-[INFO ] 2022-05-09 12:31:24.859 [vert.x-eventloop-thread-2] DbService - facture 627900c0cc637a59a60b4249 updated
-[INFO ] 2022-05-09 12:32:10.741 [vert.x-eventloop-thread-2] DbService - facture 627900c0cc637a59a60b4249 updated
-[INFO ] 2022-05-09 13:58:23.984 [vert.x-eventloop-thread-2] DbService - User admin connected
-[INFO ] 2022-05-09 14:04:55.634 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[FATAL] 2022-05-11 00:05:04.081 [vert.x-eventloop-thread-1] Main - This Route is exclusive for already mounted sub router.
+[FATAL] 2022-05-11 00:05:30.167 [vert.x-eventloop-thread-1] Main - This Route is exclusive for already mounted sub router.
+[FATAL] 2022-05-11 00:52:05.608 [vert.x-eventloop-thread-1] Main - Path must start with /
+[INFO ] 2022-05-11 00:52:53.566 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[WARN ] 2022-05-11 00:55:39.653 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 00:56:13.885 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 00:56:25.653 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 00:56:30.697 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 00:58:56.578 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 00:59:01.035 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 00:59:01.040 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 00:59:01.549 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 00:59:32.512 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 00:59:32.516 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 00:59:32.531 [vert.x-eventloop-thread-0] AuthHandler - session null
+[INFO ] 2022-05-11 00:59:39.344 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-11 01:00:12.004 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-11 01:00:22.156 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-11 01:03:13.106 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[WARN ] 2022-05-11 01:03:23.158 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:03:23.163 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:03:23.181 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:03:52.778 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:03:52.784 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:03:52.828 [vert.x-eventloop-thread-0] AuthHandler - session null
+[INFO ] 2022-05-11 01:04:05.346 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-11 01:11:00.898 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[WARN ] 2022-05-11 01:12:54.826 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:12:54.850 [vert.x-eventloop-thread-0] AuthHandler - session null
+[INFO ] 2022-05-11 01:13:11.360 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[WARN ] 2022-05-11 01:13:19.079 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:13:19.111 [vert.x-eventloop-thread-0] AuthHandler - session null
+[INFO ] 2022-05-11 01:14:15.621 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[WARN ] 2022-05-11 01:16:27.858 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:16:37.910 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:17:11.069 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:18:49.478 [vert.x-eventloop-thread-0] AuthHandler - session null
+[INFO ] 2022-05-11 01:19:26.338 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-11 01:37:31.486 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[WARN ] 2022-05-11 01:37:45.264 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:37:45.350 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:37:45.356 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:38:03.630 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:38:03.671 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:38:03.675 [vert.x-eventloop-thread-0] AuthHandler - session null
+[INFO ] 2022-05-11 01:38:11.270 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-11 01:38:43.749 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[WARN ] 2022-05-11 01:38:44.415 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:38:44.445 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:38:44.449 [vert.x-eventloop-thread-0] AuthHandler - session null
+[INFO ] 2022-05-11 01:38:52.089 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-11 01:40:34.062 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[WARN ] 2022-05-11 01:40:39.522 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:40:39.864 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:40:44.552 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:40:46.508 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:40:48.884 [vert.x-eventloop-thread-0] AuthHandler - session null
+[INFO ] 2022-05-11 01:40:59.458 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-11 01:42:30.583 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[WARN ] 2022-05-11 01:42:36.601 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:42:36.628 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:42:36.631 [vert.x-eventloop-thread-0] AuthHandler - session null
+[INFO ] 2022-05-11 01:42:50.980 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-11 01:43:35.652 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[WARN ] 2022-05-11 01:43:52.198 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:43:52.220 [vert.x-eventloop-thread-0] AuthHandler - session null
+[INFO ] 2022-05-11 01:43:58.284 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-11 01:46:55.019 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-11 01:47:34.838 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-11 01:47:52.467 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[WARN ] 2022-05-11 01:48:14.673 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:48:14.698 [vert.x-eventloop-thread-0] AuthHandler - session null
+[INFO ] 2022-05-11 01:48:24.821 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-11 01:51:53.261 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[WARN ] 2022-05-11 01:52:14.430 [vert.x-eventloop-thread-0] AuthHandler - session null
+[INFO ] 2022-05-11 01:52:24.837 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-11 01:53:15.104 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[WARN ] 2022-05-11 01:53:15.793 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:53:19.777 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:53:19.794 [vert.x-eventloop-thread-0] AuthHandler - session null
+[INFO ] 2022-05-11 01:53:25.982 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-11 01:57:24.174 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[WARN ] 2022-05-11 01:57:36.342 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 01:57:36.361 [vert.x-eventloop-thread-0] AuthHandler - session null
+[INFO ] 2022-05-11 01:57:43.616 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-11 02:03:30.378 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[WARN ] 2022-05-11 02:04:05.975 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 02:04:05.993 [vert.x-eventloop-thread-0] AuthHandler - session null
+[INFO ] 2022-05-11 02:04:13.371 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-11 02:04:36.659 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[WARN ] 2022-05-11 02:04:58.658 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 02:04:58.677 [vert.x-eventloop-thread-0] AuthHandler - session null
+[INFO ] 2022-05-11 02:05:04.915 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-11 02:06:50.189 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-11 02:10:24.333 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-11 02:12:17.810 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[WARN ] 2022-05-11 02:12:22.326 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 02:12:22.351 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 02:12:22.353 [vert.x-eventloop-thread-0] AuthHandler - session null
+[INFO ] 2022-05-11 02:12:28.855 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-11 02:14:13.090 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[WARN ] 2022-05-11 02:14:13.908 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 02:14:17.031 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 02:14:17.049 [vert.x-eventloop-thread-0] AuthHandler - session null
+[INFO ] 2022-05-11 02:14:23.384 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-11 02:15:07.515 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[WARN ] 2022-05-11 02:15:10.344 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 02:15:12.078 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 02:15:12.093 [vert.x-eventloop-thread-0] AuthHandler - session null
+[INFO ] 2022-05-11 02:15:17.785 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-11 02:15:54.489 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[WARN ] 2022-05-11 02:16:10.927 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 02:16:10.952 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 02:16:10.956 [vert.x-eventloop-thread-0] AuthHandler - session null
+[INFO ] 2022-05-11 02:16:16.945 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-11 02:16:56.692 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[WARN ] 2022-05-11 02:17:00.875 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 02:17:09.818 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 02:17:09.825 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 02:17:09.836 [vert.x-eventloop-thread-0] AuthHandler - session null
+[INFO ] 2022-05-11 02:17:25.601 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-11 02:19:39.420 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-11 02:19:43.468 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-11 02:20:27.129 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[WARN ] 2022-05-11 02:26:56.368 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 02:26:56.392 [vert.x-eventloop-thread-0] AuthHandler - session null
+[WARN ] 2022-05-11 02:26:56.395 [vert.x-eventloop-thread-0] AuthHandler - session null
+[INFO ] 2022-05-11 02:27:02.742 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-11 02:27:19.473 [vert.x-eventloop-thread-2] DbService - Facture 62793349d4ffac3ace7bb245 deleted
+[INFO ] 2022-05-11 02:27:19.610 [vert.x-eventloop-thread-2] FileHandler - removed facture file 202205091529_Dark.pdf

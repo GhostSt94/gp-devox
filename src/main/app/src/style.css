@@ -1,0 +1,32 @@
+.back:hover{
+    cursor: pointer;
+    color: black !important;
+}
+hr{
+    color: rgb(239, 107, 41);
+    padding: 2px;
+}
+.btn-primary{
+    background: #323757;
+    border: none;
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary:visited{
+    background: #1d213a;
+}
+.btn-warning{
+    background: rgb(239, 107, 41);
+    border: none;color: white;
+}
+.btn-warning:hover, .btn-warning:active, .btn-warning:visited {
+    background: rgb(184, 70, 13);
+}
+.color-1{
+    color: #323757;
+}
+.color-2{
+    color: rgb(239, 107, 41);
+}
+
+.fa-solid:hover{
+    cursor: pointer;
+}

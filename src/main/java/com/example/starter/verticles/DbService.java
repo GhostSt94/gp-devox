@@ -2,12 +2,8 @@ package com.example.starter.verticles;
 
 import com.example.starter.handler.FileHandler;
 import io.vertx.core.AbstractVerticle;
-import io.vertx.core.AsyncResult;
 import io.vertx.core.Promise;
-import io.vertx.core.Vertx;
 import io.vertx.core.eventbus.EventBus;
-import io.vertx.core.eventbus.Message;
-import io.vertx.core.json.Json;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.auth.mongo.*;
@@ -15,9 +11,6 @@ import io.vertx.ext.mongo.FindOptions;
 import io.vertx.ext.mongo.MongoClient;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.bson.types.ObjectId;
-
-import java.nio.file.FileSystem;
 
 public class DbService extends AbstractVerticle {
   static final Logger log = LogManager.getLogger(DbService.class);
@@ -256,9 +249,9 @@ public class DbService extends AbstractVerticle {
           MongoAuthentication authenticationProvider = MongoAuthentication.create(client, options);
           authenticationProvider.authenticate(credentials)
             .onSuccess(user -> {
-              log.info("User {} connected",user.get("username").toString());
-              msg.reply(user.principal());
-            })
+                log.info("User {} connected",user.get("username").toString());
+                msg.reply(user.principal());
+              })
             .onFailure(err -> {
               msg.fail(403, err.getMessage());
             });
@@ -279,6 +272,24 @@ public class DbService extends AbstractVerticle {
         log.error(e.getMessage());
       }
     });
+    /*eb.consumer("check.user",msg->{
+      JsonObject msg_data= (JsonObject) msg.body();
+      JsonObject query=new JsonObject().put("_id",msg_data.getString("_id"));
+      client.findOne("user",query,null,res->{
+        if(res.succeeded()){
+          if(res.result().getString("username").equals(msg_data.getString("username"))){
+            log.info("User valide");
+            msg.reply("valide");
+          }else{
+            log.info("not valide, must login");
+            msg.fail(400,"must login");
+          }
+        }else{
+          log.info("not valide, must login");
+          msg.fail(400,"must login");
+        }
+      });
+    });*/
   }
 
   public String setCollection(String type){

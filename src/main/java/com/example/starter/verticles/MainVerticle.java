@@ -1,28 +1,25 @@
 package com.example.starter.verticles;
 
-import com.example.starter.Main;
 import com.example.starter.handler.*;
 import io.vertx.core.AbstractVerticle;
+import io.vertx.core.Handler;
 import io.vertx.core.Promise;
-import io.vertx.core.eventbus.EventBus;
-import io.vertx.core.file.FileSystem;
+import io.vertx.core.http.Cookie;
 import io.vertx.core.http.HttpMethod;
-import io.vertx.core.json.JsonArray;
-import io.vertx.core.json.JsonObject;
-import io.vertx.ext.bridge.BridgeEventType;
-import io.vertx.ext.bridge.PermittedOptions;
-import io.vertx.ext.web.FileUpload;
 import io.vertx.ext.web.Router;
+import io.vertx.ext.web.RoutingContext;
 import io.vertx.ext.web.handler.BodyHandler;
 import io.vertx.ext.web.handler.CorsHandler;
-import io.vertx.ext.web.handler.sockjs.SockJSBridgeOptions;
-import io.vertx.ext.web.handler.sockjs.SockJSHandler;
+import io.vertx.ext.web.handler.SessionHandler;
+import io.vertx.ext.web.handler.StaticHandler;
+import io.vertx.ext.web.sstore.LocalSessionStore;
+import io.vertx.ext.web.sstore.SessionStore;
+import netscape.javascript.JSObject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Set;
+import java.net.CookieHandler;
+import java.net.CookieManager;
 
 public class MainVerticle extends AbstractVerticle {
   static final Logger log = LogManager.getLogger(MainVerticle.class);
@@ -31,59 +28,50 @@ public class MainVerticle extends AbstractVerticle {
 
     Router router=Router.router(vertx);
 
-    try {
-      SockJSBridgeOptions options = new SockJSBridgeOptions();
-      PermittedOptions address = new PermittedOptions().setAddressRegex("[^\n]+");
-      options.addInboundPermitted(address);
-      options.addOutboundPermitted(address);
-
-      SockJSHandler sockJSHandler = SockJSHandler.create(vertx);
-      router.mountSubRouter("/eventbus",sockJSHandler.bridge(options, be -> {
-        if (be.type() == BridgeEventType.REGISTER) {
-          System.out.println("sockJs: connected");
-        }
-        be.complete(true);
-      }));
-    }catch (Exception e){
-      log.error(e.getMessage());
-    }
-
-
     router.route().handler(BodyHandler.create());
-    router.route().handler(CorsHandler.create("http://localhost:8080")
-      .allowedMethod(HttpMethod.POST)
-      .allowedMethod(HttpMethod.GET)
-      .allowedMethod(HttpMethod.PUT)
-      .allowedMethod(HttpMethod.DELETE));
+    router.route().handler(SessionHandler.create(LocalSessionStore.create(vertx)));
+
+    router.route().pathRegex("/api[/]?.*").handler(AuthHandler::checkAuthAPI);
+    //router.route().handler(CorsHandler.create("*").allowedMethod(HttpMethod.POST).allowedMethod(HttpMethod.GET));
 
     //receive and save facture file in resources & DB (file_name)
-    router.post("/files/:type/:id").handler(FileHandler::saveFile);
-    router.get("/files/:type/:fileName").handler(FileHandler::getFile);
+    router.post("/api/files/:type/:id").handler(FileHandler::saveFile);
+    router.get("/api/files/:type/:fileName").handler(FileHandler::getFile);
+
+    //clients
+    router.get("/api/clients").handler(ClientsHandler::clients);
+    router.post("/api/clients").handler(ClientsHandler::addClient);
+    router.get("/api/clients/:id").handler(ClientsHandler::getClient);
+    router.put("/api/clients/:id").handler(ClientsHandler::updateClient);
+    router.delete("/clients/:id").handler(ClientsHandler::deleteClient);
+    //Project
+    router.get("/api/projects").handler(ProjectHandler::projects);
+    router.get("/api/projects/:id").handler(ProjectHandler::getProject);
+    router.post("/api/projects").handler(ProjectHandler::addProject);
+    router.put("/api/projects/:id").handler(ProjectHandler::updateProject);
+    router.delete("/api/projects/:id").handler(ProjectHandler::deleteProject);
+    router.delete("/api/projects/:id/file").handler(ProjectHandler::removeFile);
+    //Facture
+    router.get("/api/factures/project/:id").handler(FactureHandler::factures);
+    router.get("/api/factures/one/:id").handler(FactureHandler::getFacture);
+    router.put("/api/factures/:id").handler(FactureHandler::updateFacture);
+    router.post("/api/factures").handler(FactureHandler::addFacture);
+    router.delete("/api/factures/:id").handler(FactureHandler::deleteFacture);
 
     //Auth
     router.post("/auth/register").handler(AuthHandler::register);
     router.post("/auth/login").handler(AuthHandler::login);
+    router.get("/auth/check").handler(AuthHandler::checkAuth);
+    router.get("/auth/logout").handler(AuthHandler::logOut);
 
-    //clients
-    router.get("/clients").handler(ClientsHandler::clients);
-    router.post("/clients").handler(ClientsHandler::addClient);
-    router.get("/clients/:id").handler(ClientsHandler::getClient);
-    router.put("/clients/:id").handler(ClientsHandler::updateClient);
-    router.delete("/clients/:id").handler(ClientsHandler::deleteClient);
-    //Project
-    router.get("/projects").handler(ProjectHandler::projects);
-    router.get("/projects/:id").handler(ProjectHandler::getProject);
-    router.post("/projects").handler(ProjectHandler::addProject);
-    router.put("/projects/:id").handler(ProjectHandler::updateProject);
-    router.delete("/projects/:id").handler(ProjectHandler::deleteProject);
-    router.delete("/projects/:id/file").handler(ProjectHandler::removeFile);
-    //Facture
-    router.get("/factures/project/:id").handler(FactureHandler::factures);
-    router.get("/factures/one/:id").handler(FactureHandler::getFacture);
-    router.put("/factures/:id").handler(FactureHandler::updateFacture);
-    router.post("/factures").handler(FactureHandler::addFacture);
-    router.delete("/factures/:id").handler(FactureHandler::deleteFacture);
-
+    //static
+    router.route("/").handler(StaticHandler.create("src/main/app/dist").setIndexPage("index.html"));
+    router.route("/auth").handler(StaticHandler.create("src/main/app/dist"));
+    router.route("/clients").handler(StaticHandler.create("src/main/app/dist"));
+    //router.route("/clients/:id").handler(StaticHandler.create("src/main/app/dist"));
+    router.route("/ajouter/projet").handler(StaticHandler.create("src/main/app/dist"));
+    router.route("/ajouter/client").handler(StaticHandler.create("src/main/app/dist"));
+    router.route("/*").handler(ctx->ctx.redirect("/"));
 
     vertx.createHttpServer().requestHandler(router).listen(8888, http -> {
       if (http.succeeded()) {

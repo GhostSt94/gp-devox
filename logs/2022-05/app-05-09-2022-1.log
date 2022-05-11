@@ -1,0 +1,112 @@
+[INFO ] 2022-05-09 09:43:10.531 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-09 09:44:08.616 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-09 09:44:38.210 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-09 09:47:18.899 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-09 09:57:39.285 [vert.x-eventloop-thread-2] DbService - project 6261409f8209952291557f9e updated
+[INFO ] 2022-05-09 10:01:46.855 [vert.x-eventloop-thread-2] DbService - Facture 6270898d5e7c3a0a0ba5b62c deleted
+[INFO ] 2022-05-09 10:01:46.864 [vert.x-eventloop-thread-2] FileHandler - removed facture file 202205030146_Dark.pdf
+[INFO ] 2022-05-09 10:01:49.932 [vert.x-eventloop-thread-2] DbService - Facture 62708c475e7c3a0a0ba5b62d deleted
+[INFO ] 2022-05-09 10:01:49.934 [vert.x-eventloop-thread-2] FileHandler - removed facture file 202205030158_Light.pdf
+[INFO ] 2022-05-09 10:01:57.047 [vert.x-eventloop-thread-2] DbService - Facture 62708d0b5e7c3a0a0ba5b62f deleted
+[INFO ] 2022-05-09 10:01:57.049 [vert.x-eventloop-thread-2] FileHandler - removed facture file 202205030201_recu-candidature.pdf
+[INFO ] 2022-05-09 10:02:26.660 [vert.x-eventloop-thread-2] DbService - New facture created (6278e6b2cc637a59a60b4247)
+[INFO ] 2022-05-09 10:02:27.328 [vert.x-eventloop-thread-0] FileHandler - added facture file 202205091002_Dark.pdf
+[INFO ] 2022-05-09 11:45:21.414 [vert.x-eventloop-thread-2] DbService - New project created (6278fed1cc637a59a60b4248)
+[INFO ] 2022-05-09 11:51:29.412 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-09 11:53:36.991 [vert.x-eventloop-thread-2] DbService - New facture created (627900c0cc637a59a60b4249)
+[INFO ] 2022-05-09 11:53:37.252 [vert.x-eventloop-thread-0] FileHandler - added facture file 202205091153_Dark.pdf
+[INFO ] 2022-05-09 11:54:38.685 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-09 12:00:30.442 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-09 12:03:40.498 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-09 12:20:26.170 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-09 12:31:24.859 [vert.x-eventloop-thread-2] DbService - facture 627900c0cc637a59a60b4249 updated
+[INFO ] 2022-05-09 12:32:10.741 [vert.x-eventloop-thread-2] DbService - facture 627900c0cc637a59a60b4249 updated
+[INFO ] 2022-05-09 13:58:23.984 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-09 14:04:55.634 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-09 14:05:31.602 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-09 14:05:40.404 [vert.x-eventloop-thread-2] DbService - Facture 6278e6b2cc637a59a60b4247 deleted
+[INFO ] 2022-05-09 14:05:40.426 [vert.x-eventloop-thread-2] FileHandler - removed facture file 202205091002_Dark.pdf
+[INFO ] 2022-05-09 14:05:43.408 [vert.x-eventloop-thread-2] DbService - Facture 627900c0cc637a59a60b4249 deleted
+[INFO ] 2022-05-09 14:05:43.414 [vert.x-eventloop-thread-2] FileHandler - removed facture file 202205091153_Dark.pdf
+[INFO ] 2022-05-09 15:20:32.443 [vert.x-eventloop-thread-2] DbService - New client created (62793140d4ffac3ace7bb243)
+[INFO ] 2022-05-09 15:23:13.630 [vert.x-eventloop-thread-2] DbService - client 62793140d4ffac3ace7bb243 updated
+[INFO ] 2022-05-09 15:24:10.666 [vert.x-eventloop-thread-2] DbService - Client 62793140d4ffac3ace7bb243 deleted
+[INFO ] 2022-05-09 15:24:54.630 [vert.x-eventloop-thread-2] DbService - New client created (62793246d4ffac3ace7bb244)
+[INFO ] 2022-05-09 15:29:13.543 [vert.x-eventloop-thread-2] DbService - New facture created (62793349d4ffac3ace7bb245)
+[INFO ] 2022-05-09 15:29:14.241 [vert.x-eventloop-thread-0] FileHandler - added facture file 202205091529_Dark.pdf
+[INFO ] 2022-05-09 15:33:32.634 [vert.x-eventloop-thread-2] DbService - project 6278fed1cc637a59a60b4248 updated
+[INFO ] 2022-05-09 15:33:45.158 [vert.x-eventloop-thread-2] DbService - facture 62793349d4ffac3ace7bb245 updated
+[INFO ] 2022-05-09 15:33:52.036 [vert.x-eventloop-thread-2] DbService - facture 62793349d4ffac3ace7bb245 updated
+[INFO ] 2022-05-09 15:34:15.773 [vert.x-eventloop-thread-2] DbService - project 6278fed1cc637a59a60b4248 updated
+[INFO ] 2022-05-09 15:38:31.426 [vert.x-eventloop-thread-2] DbService - project 6278fed1cc637a59a60b4248 updated
+[INFO ] 2022-05-09 15:39:07.460 [vert.x-eventloop-thread-2] DbService - project 6278fed1cc637a59a60b4248 updated
+[INFO ] 2022-05-09 15:53:42.217 [vert.x-eventloop-thread-2] DbService - New facture created (62793906d4ffac3ace7bb246)
+[INFO ] 2022-05-09 15:56:43.828 [vert.x-eventloop-thread-2] DbService - Facture 62793906d4ffac3ace7bb246 deleted
+[INFO ] 2022-05-09 15:57:03.667 [vert.x-eventloop-thread-2] DbService - New facture created (627939cfd4ffac3ace7bb247)
+[INFO ] 2022-05-09 15:58:29.051 [vert.x-eventloop-thread-2] DbService - facture 627939cfd4ffac3ace7bb247 updated
+[INFO ] 2022-05-09 15:58:45.959 [vert.x-eventloop-thread-2] DbService - facture 627939cfd4ffac3ace7bb247 updated
+[INFO ] 2022-05-09 16:11:51.733 [vert.x-eventloop-thread-2] DbService - New facture created (62793d47d4ffac3ace7bb248)
+[INFO ] 2022-05-09 16:29:38.455 [vert.x-eventloop-thread-2] DbService - facture 627939cfd4ffac3ace7bb247 updated
+[INFO ] 2022-05-09 16:30:54.674 [vert.x-eventloop-thread-2] DbService - facture 62793d47d4ffac3ace7bb248 updated
+[INFO ] 2022-05-09 16:31:14.047 [vert.x-eventloop-thread-0] FileHandler - added project file 202205091631_CV-BENAMMI-Mohamed Reda (2).pdf
+[INFO ] 2022-05-09 16:31:39.948 [vert.x-eventloop-thread-0] FileHandler - removed project file 202205091631_CV-BENAMMI-Mohamed Reda (2).pdf
+[INFO ] 2022-05-09 16:32:13.675 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-09 16:35:33.139 [vert.x-eventloop-thread-2] DbService - Client 62793246d4ffac3ace7bb244 deleted
+[INFO ] 2022-05-09 16:47:26.548 [vert.x-eventloop-thread-2] DbService - New client created (6279459ed4ffac3ace7bb249)
+[INFO ] 2022-05-09 16:47:43.108 [vert.x-eventloop-thread-2] DbService - client 6279459ed4ffac3ace7bb249 updated
+[INFO ] 2022-05-09 22:05:56.238 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-09 22:16:13.456 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-09 22:18:06.107 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-09 22:27:07.653 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-09 22:29:20.316 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-09 22:31:07.517 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-09 22:31:22.551 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-09 22:50:33.256 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-09 22:51:53.075 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-09 22:52:11.087 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-09 22:52:11.092 [vert.x-eventloop-thread-0] AuthHandler - {"_id":"626a86d50fa1a97a86df3199","username":"admin","password":"$pbkdf2$FGiYPo8QyFhQ7pvM6hmSC+gq4Yj+pZro9AVIBK03v/E=$lRAK5KLqY30lqBPbIox4tcKo3uWPHr7x4GYZzcBmboBloo20WI28bwrLq0FGInBlV/JE4KAaUdfHt4a/ujdPDA"}
+[FATAL] 2022-05-09 22:56:46.582 [vert.x-eventloop-thread-1] Main - Path must start with /
+[INFO ] 2022-05-09 22:57:17.891 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-09 22:57:34.964 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-09 22:58:30.929 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-09 22:58:43.187 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-09 22:58:55.494 [vert.x-eventloop-thread-0] MainVerticle - Future{result=null}
+[INFO ] 2022-05-09 23:04:30.179 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-09 23:04:46.200 [vert.x-eventloop-thread-0] MainVerticle - Future{result=null}
+[INFO ] 2022-05-09 23:05:01.400 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-09 23:05:23.880 [vert.x-eventloop-thread-0] MainVerticle - Future{result=null}
+[INFO ] 2022-05-09 23:13:32.907 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-09 23:14:00.259 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-09 23:14:33.025 [vert.x-eventloop-thread-0] MainVerticle - reda
+[INFO ] 2022-05-09 23:27:21.790 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-09 23:31:14.257 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-09 23:31:21.463 [vert.x-eventloop-thread-0] MainVerticle - session set
+[INFO ] 2022-05-09 23:31:33.435 [vert.x-eventloop-thread-0] MainVerticle - session empty
+[INFO ] 2022-05-09 23:33:14.385 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-09 23:33:14.881 [vert.x-eventloop-thread-0] MainVerticle - session empty
+[INFO ] 2022-05-09 23:33:22.467 [vert.x-eventloop-thread-0] MainVerticle - session set
+[INFO ] 2022-05-09 23:33:30.589 [vert.x-eventloop-thread-0] MainVerticle - session empty
+[INFO ] 2022-05-09 23:34:20.864 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-09 23:34:52.366 [vert.x-eventloop-thread-0] MainVerticle - session set
+[INFO ] 2022-05-09 23:34:57.394 [vert.x-eventloop-thread-0] MainVerticle - session set
+[INFO ] 2022-05-09 23:35:02.885 [vert.x-eventloop-thread-0] MainVerticle - amine
+[INFO ] 2022-05-09 23:35:06.847 [vert.x-eventloop-thread-0] MainVerticle - amine
+[INFO ] 2022-05-09 23:35:15.066 [vert.x-eventloop-thread-0] MainVerticle - amine
+[INFO ] 2022-05-09 23:37:36.511 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-09 23:38:11.996 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-09 23:39:03.579 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-09 23:39:07.769 [vert.x-eventloop-thread-0] MainVerticle - session empty
+[INFO ] 2022-05-09 23:39:32.005 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-09 23:39:40.486 [vert.x-eventloop-thread-0] MainVerticle - {"_id":"626a86d50fa1a97a86df3199","username":"admin","password":"$pbkdf2$FGiYPo8QyFhQ7pvM6hmSC+gq4Yj+pZro9AVIBK03v/E=$lRAK5KLqY30lqBPbIox4tcKo3uWPHr7x4GYZzcBmboBloo20WI28bwrLq0FGInBlV/JE4KAaUdfHt4a/ujdPDA"}
+[INFO ] 2022-05-09 23:49:28.644 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-09 23:50:29.524 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-09 23:51:28.428 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-09 23:52:18.286 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-09 23:52:50.557 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-09 23:53:09.561 [vert.x-eventloop-thread-2] DbService - {"_id":"626a86d50fa1a97a86df3199","username":"admin","password":"$pbkdf2$FGiYPo8QyFhQ7pvM6hmSC+gq4Yj+pZro9AVIBK03v/E=$lRAK5KLqY30lqBPbIox4tcKo3uWPHr7x4GYZzcBmboBloo20WI28bwrLq0FGInBlV/JE4KAaUdfHt4a/ujdPDA"}
+[INFO ] 2022-05-09 23:53:15.490 [vert.x-eventloop-thread-2] DbService - {"_id":"626a86d50fa1a97a86df3199","username":"admin","password":"$pbkdf2$FGiYPo8QyFhQ7pvM6hmSC+gq4Yj+pZro9AVIBK03v/E=$lRAK5KLqY30lqBPbIox4tcKo3uWPHr7x4GYZzcBmboBloo20WI28bwrLq0FGInBlV/JE4KAaUdfHt4a/ujdPDA"}
+[INFO ] 2022-05-09 23:58:39.045 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888
+[INFO ] 2022-05-09 23:58:59.152 [vert.x-eventloop-thread-2] DbService - User admin connected
+[INFO ] 2022-05-09 23:59:07.619 [vert.x-eventloop-thread-2] DbService - User valide
+[INFO ] 2022-05-09 23:59:11.639 [vert.x-eventloop-thread-2] DbService - User valide
+[INFO ] 2022-05-09 23:59:49.685 [vert.x-eventloop-thread-0] MainVerticle - HTTP server started on port 8888

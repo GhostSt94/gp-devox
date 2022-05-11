@@ -92,8 +92,7 @@ public class ClientsHandler {
     }
   }*/
 
-  public static void clients(RoutingContext ctx){
-    CRUD.findAll(ctx, getJsonType());
+  public static void clients(RoutingContext ctx){ CRUD.findAll(ctx, getJsonType());
   }
 
   public static void getClient(RoutingContext ctx){
